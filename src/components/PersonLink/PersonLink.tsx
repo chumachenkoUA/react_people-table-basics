@@ -1,4 +1,4 @@
-import { Person } from '../types';
+import { Person } from '../../types';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 
@@ -9,7 +9,7 @@ type Props = {
 export const PersonLink = ({ person }: Props) => {
   return (
     <Link
-      to={`../${person.slug}`}
+      to={`/people/${person.slug}`}
       className={classNames({
         'has-text-danger': person.sex === 'f',
       })}

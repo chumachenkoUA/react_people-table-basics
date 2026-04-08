@@ -5,7 +5,7 @@ import {
   Routes,
 } from 'react-router-dom';
 import { App } from './App';
-import { PeoplePage } from './components/PeoplePage';
+import { PeoplePage } from './pages/PeoplePage';
 export const Root = () => (
   <Router>
     <Routes>
@@ -13,6 +13,7 @@ export const Root = () => (
         <Route index element={<h1 className="title">Home Page</h1>} />
         <Route path="home" element={<Navigate to="/" replace />} />
         <Route path="people">
+          <Route index element={<PeoplePage />} />
           <Route path=":slug?" element={<PeoplePage />} />
         </Route>
         <Route path="*" element={<h1 className="title">Page not found</h1>} />
